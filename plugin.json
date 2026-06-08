@@ -3,3 +3,15 @@
     "author": "Ahihidongok1012",
     "description": "Tổng hợp extension Vbook bởi Ahihidongok1012"
   },
+ "data": [
+    {
+      "name": "MyReadingManga",
+      "author": "DrLee",
+      "path": "https://raw.githubusercontent.com/meowquytoc-star/vbook-extensions/main/myreadingmanga/plugin.zip",
+      "version": 4,
+      "source": "https://myreadingmanga.info",
+      "icon": "https://raw.githubusercontent.com/meowquytoc-star/vbook-extensions/main/myreadingmanga/icon.png",
+      "description": "Read BL/Yaoi manga on MyReadingManga.info",
+      "type": "comic",
+      "locale": "en_US",
+      "tag": "nsfw"
