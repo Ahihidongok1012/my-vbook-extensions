@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Dưa Leo Truyện",
+    "author": "VBook Developer",
+    "version": 1,
+    "source": "https://dualeotruyenbs.com",
+    "regexp": "https://dualeotruyenbs\\.com/.*",
+    "description": "Đọc truyện trên Dưa Leo Truyện",
+    "locale": "vi",
+    "tag": "Truyện chữ",
+    "type": "story",
+    "path": "dualeotruyen"
+  }
+]
