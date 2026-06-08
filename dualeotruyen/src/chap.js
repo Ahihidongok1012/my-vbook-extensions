@@ -1,19 +1,50 @@
-function execute(url) {
-    let response = Engine.newRequest().url(url).get();
-    if (response.ok) {
-        let doc = response.html();
-        
-        // Chọn vùng chứa nội dung của chương truyện
-        let contentElement = doc.select(".chapter_content, .content_view, .box_chap_content");
-        
-        // Loại bỏ sạch các thẻ script, tag quảng cáo ẩn hoặc box chat tránh làm rối giao diện đọc
-        contentElement.select("script, style, .box_chat, .ad-container, .member_control, iframe").remove();
-        
-        let content = contentElement.html();
+load('config.js');
 
-        if (content) {
-            return Response.success(content + "");
+function execute(url) {
+    let doc = getDoc(url);
+    if (!doc) return Response.error("Cannot load chapter.");
+
+    let data = [];
+    let seen = {};
+
+    // Try standard img tags first (reading content area)
+    doc.select('.reading-content img, .page-break img, .chapter-content img, #content img').forEach(function(e) {
+        let src = e.attr('data-src') || e.attr('data-lazy-src') || e.attr('data-original') || e.attr('src') || '';
+        src = src.trim();
+        if (!src || seen[src] || /^data:/.test(src)) return;
+        if (!/\.(webp|jpg|jpeg|png|gif)/i.test(src)) return;
+        seen[src] = true;
+        data.push({ link: src });
+    });
+
+    // Fallback: regex scan HTML for CDN image URLs
+    if (data.length === 0) {
+        let html = '';
+        try { html = doc.html(); } catch(e) {}
+        let re = /(https?:\/\/[^\s"'<>]+\/(?:uploads|upbia|images|chapter|chap)[^\s"'<>]*\.(?:webp|jpg|jpeg|png|gif)(?:[?#][^\s"'<>]*)?)/ig;
+        let m;
+        while ((m = re.exec(html)) !== null) {
+            let src = m[1];
+            if (seen[src]) continue;
+            seen[src] = true;
+            data.push({ link: src });
         }
     }
-    return Response.error("Không thể tải nội dung chương này");
+
+    // Last resort: any CDN image (imgdualeo or similar)
+    if (data.length === 0) {
+        let html = '';
+        try { html = doc.html(); } catch(e) {}
+        let re2 = /(https?:\/\/[^\s"'<>]*(?:imgdualeo|img\.)[^\s"'<>]*\.(?:webp|jpg|jpeg|png|gif)(?:[?#][^\s"'<>]*)?)/ig;
+        let m2;
+        while ((m2 = re2.exec(html)) !== null) {
+            let src = m2[1];
+            if (seen[src]) continue;
+            seen[src] = true;
+            data.push({ link: src });
+        }
+    }
+
+    if (data.length === 0) return Response.error("No images found.");
+    return Response.success(data);
 }
