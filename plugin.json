@@ -1,14 +1,14 @@
 [
   {
     "name": "Dưa Leo Truyện",
-    "author": "VBook Developer",
+    "author": "Ahihidongok1012",
     "version": 1,
     "source": "https://dualeotruyenbs.com",
     "regexp": "https://dualeotruyenbs\\.com/.*",
     "description": "Đọc truyện trên Dưa Leo Truyện",
     "locale": "vi",
-    "tag": "Truyện chữ",
-    "type": "story",
+    "tag": "Truyện tranh",
+    "type": "comic",
     "path": "dualeotruyen"
   }
 ]
