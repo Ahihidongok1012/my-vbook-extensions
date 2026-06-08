@@ -1,19 +1,12 @@
-{
-  "metadata": {
-    "name": "Dưa Leo Truyện",
-    "author": "VBook Developer",
-    "version": 1,5
-    "source": "https://dualeotruyenbs.com",
-    "regexp": "https://dualeotruyenbs\\.com/.*",
-    "description": "Đọc truyện trên Dưa Leo Truyện",
-    "locale": "vi",
-    "tag": "Truyện tranh",
-    "type": "comic"
-  },
-  "script": {
-    "home": "home.js",
-    "detail": "detail.js",
-    "toc": "toc.js",
-    "chap": "chap.js"
-  }
-}
+  {
+      "name": "Dưa Leo Truyện",
+      "author": "Ahihidongok1012",
+      "path": "https://raw.githubusercontent.com/Ahihidongok1012/vbook-extensions/main/myreadingmanga/plugin.zip",
+      "version": 4,
+      "source": "https://dualeotruyenbs.com/",
+      "icon": "https://raw.githubusercontent.com/Ahihidongok1012/vbook-extensions/main/dualeotruyen/icon.png",
+      "description": "Read BL/Yaoi manga on Dưa Leo Truyện",
+      "type": "comic",
+      "locale": "vi_VN",
+      "tag": "nsfw"
+    },
