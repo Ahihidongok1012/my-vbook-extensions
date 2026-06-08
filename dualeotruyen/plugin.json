@@ -1,12 +1,28 @@
-  {
-      "name": "Dưa Leo Truyện",
-      "author": "Ahihidongok1012",
-      "path": "https://raw.githubusercontent.com/Ahihidongok1012/vbook-extensions/main/myreadingmanga/plugin.zip",
-      "version": 4,
-      "source": "https://dualeotruyenbs.com/",
-      "icon": "https://raw.githubusercontent.com/Ahihidongok1012/vbook-extensions/main/dualeotruyen/icon.png",
-      "description": "Read BL/Yaoi manga on Dưa Leo Truyện",
-      "type": "comic",
-      "locale": "vi_VN",
-      "tag": "nsfw"
-    },
+{
+  "metadata": {
+    "name": "Dualeotruyen",
+    "author": "Ahihidongok1012",
+    "version": 8,
+    "source": "https://dualeotruyenbs.com",
+    "icon": "https://dualeotruyenbs.com/favicon.ico",
+    "regexp": "https?:\\/\\/(?:[^\\/]+\\.)?dualeotruyenbs\\.com\\/[^\\s]*",
+    "description": "Đọc truyện tranh BL trên Dualeotruyen",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "type": "comic",
+    "tag": "nsfw"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "gen": "gen.js",
+    "search": "search.js",
+    "detail": "detail.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  },
+  "config": {
+    "thread_num": 1,
+    "delay": 500
+  }
+}
