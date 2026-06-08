@@ -5,13 +5,13 @@
   },
  "data": [
     {
-      "name": "MyReadingManga",
-      "author": "DrLee",
-      "path": "https://raw.githubusercontent.com/meowquytoc-star/vbook-extensions/main/myreadingmanga/plugin.zip",
+      "name": "DuaLeoTruyen",
+      "author": "Ahihidongok1012",
+      "path": "https://raw.githubusercontent.com/Ahihidongok1012/vbook-extensions/main/dualeotruyen/plugin.zip",
       "version": 4,
-      "source": "https://myreadingmanga.info",
-      "icon": "https://raw.githubusercontent.com/meowquytoc-star/vbook-extensions/main/myreadingmanga/icon.png",
-      "description": "Read BL/Yaoi manga on MyReadingManga.info",
+      "source": "https://dualeotruyenbs.com/",
+      "icon": "https://raw.githubusercontent.com/Ahihidongok1012/vbook-extensions/main/dualeotruyen/icon.jpg",
+      "description": "Read BL/Yaoi manga on DuaLeoTruyen",
       "type": "comic",
-      "locale": "en_US",
+      "locale": "vi_VN",
       "tag": "nsfw"
